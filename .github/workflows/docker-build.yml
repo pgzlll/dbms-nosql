@@ -1,14 +1,12 @@
-# .github/workflows/docker-build.yml
-
 name: Build and Push Docker Image
 
 on:
   push:
     branches:
-      - main  # main branch'e push edilince çalışır
+      - main
   pull_request:
     branches:
-      - main # main pr açıldığında build olur
+      - main
 
 jobs:
   build:
@@ -28,7 +26,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and Push Docker image
-      run: docker/build-push-action@v6
+      uses: docker/build-push-action@v6
       with:
         context: .
         file: ./Dockerfile
