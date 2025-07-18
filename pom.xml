@@ -5,15 +5,12 @@
     <groupId>com.nosqllab</groupId>
     <artifactId>nosql-spark-lab</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
-<<<<<<< HEAD
-        <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.target>20</maven.compiler.target>
-=======
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
->>>>>>> 159fcbc (Kod güncellemeleri yapıldı)
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.sparkjava</groupId>
@@ -55,10 +52,7 @@
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.36</version>
         </dependency>
-
     </dependencies>
-<<<<<<< HEAD
-=======
 
     <build>
         <plugins>
@@ -79,7 +73,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>app.Main</mainClass> <!-- Ana sınıfın tam adı -->
+                            <mainClass>app.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -111,6 +105,4 @@
             </plugin>
         </plugins>
     </build>
-
->>>>>>> 159fcbc (Kod güncellemeleri yapıldı)
 </project>
