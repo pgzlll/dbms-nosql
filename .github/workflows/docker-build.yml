@@ -15,6 +15,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Show problematic file head
+      run: head -40 src/main/java/app/store/HazelcastStore.java
+
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
