@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+
+  app:
+    build: .
+    container_name: nosql-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+      - mongodb
+      - hazelcast
+    environment:
+      SPRING_REDIS_HOST: redis
+      SPRING_REDIS_PORT: 6379
+      SPRING_DATA_MONGODB_HOST: mongodb
+      SPRING_DATA_MONGODB_PORT: 27017
+      SPRING_DATA_MONGODB_DATABASE: nosql_db
+      HAZELCAST_CLUSTER_MEMBERS: hazelcast:5701
+    networks:
+      - nosql-net
+
+  hazelcast:
+    image: hazelcast/hazelcast:3.12
+    container_name: hazelcast
+    ports:
+      - "5701:5701"
+    networks:
+      - nosql-net
+
+  mongodb:
+    image: mongo:7
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - nosql-net
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - nosql-net
+
+networks:
+  nosql-net:
+    driver: bridge
