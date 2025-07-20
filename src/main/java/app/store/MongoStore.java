@@ -13,19 +13,12 @@ public class MongoStore {
     static MongoCollection<Document> collection;
     static Gson gson = new Gson();
 
-<<<<<<< HEAD
     public static void init() {
         client = MongoClients.create("mongodb://localhost:27017"); 
         collection = client.getDatabase("nosqllab").getCollection("ogrenciler");
         collection.drop(); // eski kayıtlar silinir
     }
-=======
-    public static void init(){
-        client=MongoClients.create("mongodb://mongo:27017");
-        collection=client.getDatabase("nosqllab").getCollection("ogrenciler");
-        }
 
->>>>>>> 159fcbc (Kod güncellemeleri yapıldı)
 
     public static void put(String key, Student student){
         String json = gson.toJson(student);
