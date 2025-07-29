@@ -12,11 +12,15 @@ public class HazelcastStore {
     static IMap<String, Student> map;
 
     public static void init() {
-        hz = HazelcastClient.newHazelcastClient(); // config dosyasına bağlanır
-        map = hz.getMap("ogrenciler");
+
+        if (hz != null) return;
 
         ClientConfig config = new ClientConfig();
         config.getNetworkConfig().addAddress("hazelcast:5701");
+        config.getNetworkConfig().addAddress("hazelcast:5703");
+        config.getNetworkConfig().addAddress("hazelcast:5704");
+        config.getNetworkConfig().addAddress("hazelcast:5705");
+
 
         hz = HazelcastClient.newHazelcastClient(config); // config dosyasına bağlanır
         map = hz.getMap("ogrenciler");

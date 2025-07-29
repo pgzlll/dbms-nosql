@@ -26,6 +26,8 @@ services:
     container_name: hazelcast
     ports:
       - "5701:5701"
+    environment:
+      HZ_CLUSTERNAME: dev
     networks:
       - nosql-net
 

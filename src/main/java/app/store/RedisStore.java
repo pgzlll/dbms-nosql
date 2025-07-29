@@ -15,7 +15,7 @@ public class RedisStore {
     static Gson gson = new Gson();
 
     public static void init() {
-        jedis = new Jedis("localhost", 6379); // IP ve PORT burada
+        jedis = new Jedis("redis", 6379); // IP ve PORT burada
         jedis = new Jedis("redis", 6379); // IP ve PORT burada
     }
 

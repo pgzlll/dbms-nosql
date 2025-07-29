@@ -14,7 +14,7 @@ public class MongoStore {
     static Gson gson = new Gson();
 
     public static void init() {
-        client = MongoClients.create("mongodb://localhost:27017"); 
+        client = MongoClients.create("mongodb://mongo:27017");
         collection = client.getDatabase("nosqllab").getCollection("ogrenciler");
         collection.drop(); // eski kayıtlar silinir
     }
