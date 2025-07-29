@@ -95,3 +95,4 @@ Koşum zamanı testi:
 **(\*)** Deney kapsamında verilen bu çalışmayı hayal gücünüzle geliştirip, CV' nize eklemeniz tavsiye edilir.
 
 
+# deneme
